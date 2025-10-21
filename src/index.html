@@ -2,11 +2,157 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Hello World!</title>
+    <title>Application Mate / Job Application</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <h1>💖 Hello World!</h1>
-    <p>Welcome to your Electron application.</p>
+    <main class="container">
+      <header class="card-header">
+        <h1>Application Mate</h1>
+
+      </header>
+
+      <form class="card" onsubmit="return false;">
+        <!-- Personal Information Section -->
+        <section class="section">
+          <div class="section-header">
+            <h2 class="section-title">Personal Information</h2>
+            <p class="section-description">Basic details about yourself</p>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="firstName">First Name <span class="required">*</span></label>
+              <div class="field-row">
+                <input id="firstName" type="text" placeholder="Jane" required />
+                <button type="button" class="copy-btn" onclick="copyTextById('firstName')">Copy</button>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="lastName">Last Name <span class="required">*</span></label>
+              <div class="field-row">
+                <input id="lastName" type="text" placeholder="Doe" required />
+                <button type="button" class="copy-btn" onclick="copyTextById('lastName')">Copy</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="email">Email <span class="required">*</span></label>
+              <div class="field-row">
+                <input id="email" type="email" placeholder="you@example.com" required />
+                <button type="button" class="copy-btn" onclick="copyTextById('email')">Copy</button>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone <span class="required">*</span></label>
+              <div class="field-row">
+                <input id="phone" type="tel" placeholder="+44 7700 900000" required />
+                <button type="button" class="copy-btn" onclick="copyTextById('phone')">Copy</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field full">
+              <label for="password">Password <span class="required">*</span></label>
+              <div class="field-row">
+                <input id="password" type="password" placeholder="••••••••" required />
+                <button type="button" class="copy-btn" onclick="copyTextById('password')">Copy</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Home Address Section -->
+        <section class="section">
+          <div class="section-header">
+            <h2 class="section-title">Home Address</h2>
+            <p class="section-description">Where you currently reside</p>
+          </div>
+
+          <div class="form-row">
+            <div class="field full">
+              <label for="country">Country <span class="required">*</span></label>
+              <div class="field-row">
+                <select id="country">
+                  <option value="United Kingdom" selected>United Kingdom</option>
+                  <option value="United States">United States</option>
+                  <option value="Other">Other</option>
+                </select>
+                <button type="button" class="copy-btn" onclick="copyTextById('country')">Copy</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field full">
+              <label for="address1">Address Line 1 <span class="required">*</span></label>
+              <div class="field-row">
+                <input id="address1" type="text" placeholder="123 Example Street" required />
+                <button type="button" class="copy-btn" onclick="copyTextById('address1')">Copy</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="address2">Address Line 2</label>
+              <div class="field-row">
+                <input id="address2" type="text" placeholder="Flat, building, etc." />
+                <button type="button" class="copy-btn" onclick="copyTextById('address2')">Copy</button>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="address3">Address Line 3</label>
+              <div class="field-row">
+                <input id="address3" type="text" placeholder="Optional" />
+                <button type="button" class="copy-btn" onclick="copyTextById('address3')">Copy</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="city">City or Town <span class="required">*</span></label>
+              <div class="field-row">
+                <input id="city" type="text" placeholder="Leicester" required />
+                <button type="button" class="copy-btn" onclick="copyTextById('city')">Copy</button>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="county">County</label>
+              <div class="field-row">
+                <input id="county" type="text" placeholder="Leicestershire" />
+                <button type="button" class="copy-btn" onclick="copyTextById('county')">Copy</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field full">
+              <label for="postcode">Postcode <span class="required">*</span></label>
+              <div class="field-row">
+                <input id="postcode" type="text" placeholder="LE19 4AT" required />
+                <button type="button" class="copy-btn" onclick="copyTextById('postcode')">Copy</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Actions -->
+        <div class="actions">
+          <button type="button" class="primary" onclick="saveAll()">Save All</button>
+        </div>
+      </form>
+    </main>
+
+    <script src="renderer.js"></script>
   </body>
 </html>
