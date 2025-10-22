@@ -240,6 +240,36 @@ body {
   animation: toastSlideOut 0.3s ease-in forwards;
 }
 
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+footer p {
+    font-size: 0.9rem; /* text-sm equivalent */
+    margin-bottom: 1rem; /* mb-4 equivalent */
+}
+
+footer .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem; /* gap-6 equivalent */
+}
+
+footer .social-links a i {
+    font-size: 2rem; /* fa-2x equivalent */
+    color: rgba(255, 255, 255, 0.7); /* text-gray-400 equivalent */
+    transition: all 0.3s ease; /* transition-colors duration-300 */
+}
+
+footer .social-links a:hover i {
+    color: white; /* hover:text-white */
+    transform: scale(1.1); /* hover:scale-110 */
+}
+
+
 @keyframes toastSlideIn {
   0% {
     transform: translateX(400px) scale(0.8);
